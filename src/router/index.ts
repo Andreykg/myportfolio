@@ -1,19 +1,37 @@
-import Vue from 'vue'
-import VueRouter, { RouteConfig } from 'vue-router'
-import Home from '../views/Home.vue'
+import Vue from 'vue';
+import Router from 'vue-router';
 
-Vue.use(VueRouter)
+import AppLayout from '@/AppLayout.vue';
+import InitLayout from '@/InitLayout.vue';
 
-const routes: Array<RouteConfig> = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-]
+import Home from '@/views/Home.vue';
 
-const router = new VueRouter({
-  routes
-})
+Vue.use(Router);
 
-export default router
+const routes = [
+    { path: '*', redirect: '/init' },
+    {
+        path: '/init',
+        name: 'init',
+        component: InitLayout,
+        meta: {
+            name: 'init',
+        },
+    },
+    {
+        path: '',
+        component: AppLayout,
+        children: [
+            { path: '', redirect: '/login' },
+            {
+                path: '/home',
+                name: 'home',
+                component: Home,
+            },
+        ],
+    },
+];
+
+const router = new Router({ routes });
+
+export default router;

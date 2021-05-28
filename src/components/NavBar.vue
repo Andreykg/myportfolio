@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">Antuch Andrey</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -22,7 +22,9 @@
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <router-link class="nav-link" :to="{ name: 'link' }">
+              Link
+            </router-link>
           </li>
           <li class="nav-item dropdown">
             <a
@@ -68,17 +70,15 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 
-@Component<NavBar>({
-})
-export default class NavBar extends Vue {
-}
+@Component<NavBar>({})
+export default class NavBar extends Vue {}
 </script>
 
 <style scoped>
-#navbarSupportedContent li .nav-link{
-    color: #ffffff;
+#navbarSupportedContent li .nav-link {
+  color: #ffffff;
 }
 .navbar-brand {
-    color: #ffffff!important;
+  color: #ffffff !important;
 }
 </style>
