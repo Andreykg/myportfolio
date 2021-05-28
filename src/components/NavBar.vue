@@ -69,21 +69,16 @@ import Vue from "vue";
 import Component from "vue-class-component";
 
 @Component<NavBar>({
-  // props: {
-  //     title: String,
-  //     icon: String,
-  //     tooltip: String,
-  // },
 })
 export default class NavBar extends Vue {
-  // protected readonly title!: string;
-  // protected readonly icon!: string;
-  // get classIcon(): string {
-  //     return 'icon-' + this.icon;
-  // }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+#navbarSupportedContent li .nav-link{
+    color: #ffffff;
+}
+.navbar-brand {
+    color: #ffffff!important;
+}
 </style>
