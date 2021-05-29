@@ -5,6 +5,9 @@ import AppLayout from '@/AppLayout.vue';
 import InitLayout from '@/InitLayout.vue';
 
 import Home from '@/views/Home.vue';
+import About from '@/views/About.vue';
+import Portfolio from '@/views/Portfolio.vue';
+import Contact from '@/views/Contact.vue';
 
 Vue.use(Router);
 
@@ -27,6 +30,21 @@ const routes = [
                 path: '/home',
                 name: 'home',
                 component: Home,
+            },
+            {
+                path: '/about',
+                name: 'about',
+                component: About,
+            },
+            {
+                path: '/portfolio',
+                name: 'portfolio',
+                component: Portfolio,
+            },
+            {
+                path: '/contact',
+                name: 'contact',
+                component: Contact,
             },
         ],
     },

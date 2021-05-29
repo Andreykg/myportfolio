@@ -18,9 +18,40 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <router-link class="nav-link nav-brand current" :to="{ name: 'home' }">
+          <li class="nav-item">
+            <router-link
+              class="nav-link nav-brand"
+              :class="{ current: currentRouteName == 'home' }"
+              :to="{ name: 'home' }"
+            >
               Home
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link
+              class="nav-link nav-brand"
+              :class="{ current: currentRouteName == 'about' }"
+              :to="{ name: 'about' }"
+            >
+              About
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link
+              class="nav-link nav-brand"
+              :class="{ current: currentRouteName == 'portfolio' }"
+              :to="{ name: 'portfolio' }"
+            >
+              Portfolio
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link
+              class="nav-link nav-brand"
+              :class="{ current: currentRouteName == 'contact' }"
+              :to="{ name: 'contact' }"
+            >
+              Contact
             </router-link>
           </li>
         </ul>
@@ -34,7 +65,13 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 
-@Component<NavBar>({})
+@Component<NavBar>({
+  computed: {
+    currentRouteName() {
+      return this.$route.name;
+    },
+  },
+})
 export default class NavBar extends Vue {}
 </script>
 
@@ -49,6 +86,9 @@ ul {
   margin-left: 20px;
   > li {
     margin: 0 20px;
+    width: fit-content;
+    border: 2px solid transparent;
+    border-radius: 5px;
   }
 }
 .navbar-toggler {
@@ -61,7 +101,18 @@ ul {
   }
 }
 .navbar .current {
-  border: 1px solid #ffffff;
+  border: 2px solid #ffffff;
   border-radius: 5px;
+  color: #ffffff !important;
+}
+
+@media (max-width: 991px) {
+  ul > li {
+    width: fit-content;
+    a {
+      padding: 8px !important;
+      // padding-right: 10px!important;
+    }
+  }
 }
 </style>

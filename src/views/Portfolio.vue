@@ -1,6 +1,6 @@
 <template>
   <div class="home" style="color: white">
-    <div style="text-align: center; font-size: 100px">Привет HOME!</div>
+    <div style="text-align: center; font-size: 100px">Привет Portfolio!</div>
   </div>
 </template>
 
@@ -10,5 +10,5 @@ import { Component, Vue } from "vue-property-decorator";
 @Component({
   components: {},
 })
-export default class Home extends Vue {}
+export default class Portfolio extends Vue {}
 </script>
