@@ -3,7 +3,7 @@
     <div id="main">
       <div>
         <div style="flex: 1">
-          <div>Hello! <i class="icon-f icon-chat" /></div>
+          <div>Hello!</div>
           <div>
             I'm <span>Antuch Andrey</span> I'm a full-stack web developer
           </div>

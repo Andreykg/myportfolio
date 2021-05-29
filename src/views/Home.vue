@@ -2,23 +2,7 @@
   <div class="home" style="color: white">
       <div style="    text-align: center;
     font-size: 100px;">
-        Привет Зай!
-      </div>
-      <div style="    text-align: center;
-    font-size: 100px;">
-        Привет Зай!
-      </div>
-      <div style="    text-align: center;
-    font-size: 100px;">
-        Привет Зай!
-      </div>
-      <div style="    text-align: center;
-    font-size: 100px;">
-        Привет Зай!
-      </div>
-      <div style="    text-align: center;
-    font-size: 100px;">
-        Привет Зай!
+        Привет!
       </div>
 
   </div>
