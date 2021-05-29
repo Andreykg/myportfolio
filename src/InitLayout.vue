@@ -1,32 +1,25 @@
 <template>
-  <div id="app__block">
-    <!-- <NavBar></NavBar> -->
-    <main id="main">
-      SALAM 
-        <!-- <router-view></router-view> -->
-    </main>
-    <!-- <footer>
-        <div style="text-align: center; color:white; padding-top: 15px; padding-bottom: 15px;">
-             Create by Antuch Andrey
+  <div id="init__block">
+    <div id="main">
+      <div>
+        <div style="flex: 1">
+          <div>Hello! <i class="icon-f icon-chat" /></div>
+          <div>
+            I'm <span>Antuch Andrey</span> I'm a full-stack web developer
+          </div>
         </div>
-        </footer> -->
+        <router-link
+          :to="{ name: 'home' }"
+          class="btn-flip"
+          data-go="Go"
+          data-front="View my work"
+        ></router-link>
+      </div>
+    </div>
     <div class="main-bg">
       <canvas id="c"></canvas>
     </div>
   </div>
-
-  <!-- <div class="container-fluid" style="z-index=1">
-      <NavBar></NavBar>
-    </div>
-    <div class="content" style="z-index=1">
-      <router-view></router-view>
-    </div>
-    <div class="main-bg">
-      <canvas id="c"></canvas>
-    </div>
-    <div class="footer" style="z-index=1">
-      <footer style="color: white">FOOTER</footer>
-    </div>-->
 </template>
 
 <script lang="ts">
@@ -47,7 +40,7 @@ import Component from "vue-class-component";
     const ctx = c.getContext("2d");
 
     //making the canvas full screen
-    const main = document.getElementById("app__block");
+    const main = document.getElementById("init__block");
     c.height = main?.offsetHeight || 0;
     c.width = main?.offsetWidth || 0;
 
@@ -97,8 +90,6 @@ import Component from "vue-class-component";
 export default class App extends Vue {}
 </script>
 <style scouped lang="scss">
-//main background
-// * START
 .main-bg {
   width: 100%;
   height: 100vh;
@@ -112,21 +103,93 @@ export default class App extends Vue {}
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  background: black;
-}
 canvas {
   display: block;
 }
-// * END
 
-#app__block {
+#init__block {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-main {
+#main {
   flex: 1;
+
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  > div {
+    padding: 15px;
+    font-size: 30px;
+    color: #ffffff;
+    span {
+      color: #d41b68;
+      font-size: 34px;
+    }
+  }
+}
+
+//button
+$speed: 0.5s;
+
+.btn-flip {
+  opacity: 1;
+  outline: 0;
+  color: #fff;
+  line-height: 40px;
+  position: relative;
+  text-align: center;
+  letter-spacing: 1px;
+  display: inline-block;
+  text-decoration: none;
+  font-family: "Open Sans";
+  text-transform: uppercase;
+  // border-radius: 5px;
+
+  &:hover {
+    &:after {
+      opacity: 1;
+      transform: translateY(0) rotateX(0);
+    }
+
+    &:before {
+      opacity: 0;
+      transform: translateY(50%) rotateX(90deg);
+    }
+  }
+
+  &:after {
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    color: #323237;
+    display: block;
+    transition: $speed;
+    position: absolute;
+    background: #adadaf;
+    content: attr(data-go);
+    transform: translateY(-50%) rotateX(90deg);
+    border-radius: 5px;
+  }
+
+  &:before {
+    top: 0;
+    left: 0;
+    opacity: 1;
+    color: #adadaf;
+    display: block;
+    padding: 0 30px;
+    line-height: 40px;
+    transition: $speed;
+    position: relative;
+    background: #323237;
+    content: attr(data-front);
+    transform: translateY(0) rotateX(0);
+
+    border-radius: 5px;
+  }
 }
 </style>
