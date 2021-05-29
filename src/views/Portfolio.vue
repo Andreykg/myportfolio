@@ -1,5 +1,5 @@
 <template>
-  <div class="home" style="color: white">
+  <div>
     <div style="text-align: center; font-size: 100px">Привет Portfolio!</div>
   </div>
 </template>

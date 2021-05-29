@@ -47,4 +47,29 @@
         content: "\e901";
         color: #ffffff;
     }
+
+    &.icon-vue:before {
+        content: "\e902";
+        color: #3FB27F;
+    }
+
+    &.icon-sass:before {
+        content: "\e903";
+        color: #C76494;
+    }
+
+    &.icon-html:before {
+        content: "\e904";
+        color: #DD4B25;
+    }
+
+    &.icon-css3:before {
+        content: "\e905";
+        color: #254BDD;
+    }
+
+    &.icon-git:before {
+        content: "\e906";
+        color: #000000;
+    }
 }

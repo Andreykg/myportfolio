@@ -25,6 +25,20 @@ import Component from "vue-class-component";
 export default class App extends Vue {}
 </script>
 <style scouped lang="scss">
+// переход между страницами
+// start
+.fade-enter,
+.fade-leave-to {
+  transition: translateX(3em);
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.3s ease;
+}
+// переход между страницами
+// end
+
 //main background
 // * START
 #app__block {
