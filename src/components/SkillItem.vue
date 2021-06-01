@@ -1,6 +1,9 @@
 <template>
   <div class="skill__item">
-    <i class="icon-f lg" :class="itemClass" />
+    <i class="icon-f" :class="itemClass">
+        <slot></slot>
+    </i>
+
   </div>
 </template>
 

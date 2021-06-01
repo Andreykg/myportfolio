@@ -38,19 +38,23 @@
         font-size: 48px;
     }
 
+    &.xlg {
+        font-size: 58px;
+    }
+
     &.icon-arrow-right:before {
         content: "\e900";
         color: #ffffff;
     }
 
-    &.icon-bars:before {
+    &.icon-vue:before {
         content: "\e901";
-        color: #ffffff;
+        color: #3FB27F;
     }
 
-    &.icon-vue:before {
+    &.icon-bars:before {
         content: "\e902";
-        color: #3FB27F;
+        color: #ffffff;
     }
 
     &.icon-sass:before {
@@ -71,5 +75,30 @@
     &.icon-git:before {
         content: "\e906";
         color: #000000;
+    }
+
+    &.icon-mssql {
+        .path1:before {
+            content: "\e907";
+            color: #919DAA;
+        }
+
+        .path2:before {
+            content: "\e908";
+            margin-left: -1em;
+            color: #919DAA;
+        }
+
+        .path3:before {
+            content: "\e909";
+            margin-left: -1em;
+            color: #A91D22;
+        }
+
+        .path4:before {
+            content: "\e90a";
+            margin-left: -1em;
+            color: #231F1F;
+        }
     }
 }
